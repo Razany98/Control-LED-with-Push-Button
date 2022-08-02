@@ -1,6 +1,6 @@
 # Push Button 
 
-one of the special components different from the on/off buttons for allowing the Arduino to on/off light without personal control. 
+one of the special tools differs from the switch button for allowing the Arduino to on/off with a momentary position.
 
 ### Requested Materials: 
 - Arduino UNO
@@ -22,21 +22,30 @@ one of the special components different from the on/off buttons for allowing the
 
 ### Programming Code: 
 ```
+//pin 2: Input for reading the button 
+//pin 13: Output fot controlling the LED
+
+int Button = 2; 
+int LED = 13; 
+
 void setup()
 {
-  pinMode(2, INPUT);
-  pinMode(13, OUTPUT);
+  pinMode(Button, INPUT);
+  pinMode(LED, OUTPUT);
 }
 
 void loop()
 {
-  if(digitalRead(2) == 1)
+  if(digitalRead(Button) == 1)
   {
-    digitalWrite(13, HIGH);
+    digitalWrite(LED, HIGH);
   }
   else 
   {
-    digitalWrite(13, LOW);
+    digitalWrite(LED, LOW);
   }
 }
 ```
+
+#### Tinkercard design link: 
+https://www.tinkercad.com/things/cnZoFvnCFMD 
